@@ -23,10 +23,6 @@ export default function Home() {
           sx={{
             pt: 4,
             pb: 4,
-            borderLeft: 0.5,
-            borderRight: 0.5,
-            borderColor: theme.palette.tertiary.main,
-            borderRadius: 10,
           }}
         >
           <Container maxWidth="md">
@@ -45,25 +41,37 @@ export default function Home() {
               }}
             >
               <Typography variant="h6" sx={{ px: 2 }}>
-                main text color "jade"
+                main text color &quot;russian violet&quot;
               </Typography>
               <Typography
                 variant="h6"
                 sx={{ px: 2, color: theme.palette.primary.main }}
               >
-                primary color "air force blue"
+                primary color &quot;french mauve&quot;
               </Typography>
               <Typography
                 variant="h6"
                 sx={{ px: 2, color: theme.palette.secondary.main }}
               >
-                secondary color "raisin black"
+                secondary color &quot;coral pink&quot;
               </Typography>
               <Typography
                 variant="h6"
                 sx={{ px: 2, color: theme.palette.tertiary.main }}
               >
-                tertiary color "silver"
+                tertiary color &quot;plum&quot;
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{ px: 2, color: theme.palette.background.main}}
+              >
+                background color &quot;persian pink&quot;
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{ px: 2, color: theme.palette.accent.main}}
+              >
+                accent color &quot;russian violet&quot;
               </Typography>
             </Box>
             <Typography variant="h6" align="center" sx={{ pt: 4 }} paragraph>
@@ -87,11 +95,6 @@ export default function Home() {
           sx={{
             paddingTop: 2,
             paddingBottom: 4,
-            borderLeft: 0.5,
-            borderRight: 0.5,
-            borderBottom: 0.5,
-            borderColor: theme.palette.tertiary.main,
-            borderRadius: 10,
           }}
           maxWidth="md"
         >

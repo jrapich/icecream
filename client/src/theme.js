@@ -1,42 +1,41 @@
 import { createTheme } from "@mui/material/styles";
 
-//color palette object. customize the colors as you see fit
+//color palette object
 const colors = {
-  silver: "#c2c2c2",
-  jade: "#5bae6a",
-  airForceBlue: "#597e9b",
-  spaceCadetBlue: "#27293f",
-  raisinBlack: "#181d27",
+  russianViolet: "#441151",
+  plum: "#883677",
+  frenchMauve: "#CA61C3",
+  persianPink: "#EE85B5",
+  coralPink: "#FF958C",
 };
 
 // Create our theme palette
 let theme = createTheme({
   palette: {
     text: {
-      main: colors.jade,
+      main: colors.russianViolet,
     },
     background: {
-      main: colors.spaceCadetBlue,
+      main: colors.persianPink,
     },
     primary: {
-      main: colors.airForceBlue,
-      contrastText: colors.jade,
+      main: colors.frenchMauve
+      // contrastText: colors.jade,
     },
     secondary: {
-      main: colors.raisinBlack,
-      contrastText: colors.jade,
+      main: colors.coralPink
+      // contrastText: colors.jade,
     },
     tertiary: {
-      main: colors.silver,
+      main: colors.plum,
     },
     accent: {
-      main: colors.jade,
+      main: colors.russianViolet,
     },
   },
 });
 
 //create the theme with MUI
-//this is custom/colors boilerplate for an early version of a basic site. youll want to customize this as your own.
 theme = createTheme(theme, {
   components: {
     MuiCssBaseline: {
@@ -50,7 +49,7 @@ theme = createTheme(theme, {
     MuiToolbar: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.secondary.main,
+          backgroundColor: theme.palette.primary.main
         },
       },
     },
