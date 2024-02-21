@@ -1,0 +1,33 @@
+{
+  "name": "icecream",
+  "version": "1.0.0",
+  "description": "store page for freeze dried icecream",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server/ && node server.js",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "seed": "cd server && node seeds/seeds.js",
+    "update": "ncu && ncu -u && cd server && ncu && ncu -u && cd ../client && ncu && ncu -u"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrapich/icecream.git"
+  },
+  "author": "https://github.com/jrapich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrapich/icecream/issues"
+  },
+  "homepage": "https://github.com/jrapich/icecream#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "dotenv": "^16.4.4",
+    "vite": "^5.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
