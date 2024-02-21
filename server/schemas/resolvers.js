@@ -4,7 +4,6 @@ const {
   GraphQLErrorData,
   MutationError,
 } = require("../utils");
-const auth = new AuthTools();
 const mutation = new GraphQLErrorData("mutation");
 //devlogging tools
 const dev = new DevLoggingTools(false);
