@@ -1,25 +1,16 @@
 const typeDefs = `
-    type User {
-        _id: ID
-        username: String!
+    type Order {
+        name: String
         email: String
-        password: String
+        order: String
     }
-
-    type Auth {
-        token: String
-        user: User
-    }
-
-    type Query {
-        me: User
-        user(username: String!): User
+    
+    input OrderBody {
+        content: String
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!): Auth
-        deleteUser(email: String!, password: String!): Auth
-        login(email: String!, password: String!): Auth
+        orderForm(name: String, email: String!, body: OrderBody): Order
     }
 `;
 
