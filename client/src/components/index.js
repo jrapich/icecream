@@ -1,4 +1,5 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import HomeMiddleContent from "./HomeMiddleContent";
 
-export { Header, Footer };
+export { Header, Footer, HomeMiddleContent };

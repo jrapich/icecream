@@ -5,47 +5,51 @@ import {
   Typography,
   Stack,
   Button,
-  Grid,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
   Divider,
-  Slide,
 } from "@mui/material";
+import { HomeMiddleContent } from "../components";
 import theme from "../theme";
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
 
+  //set scrollTop state to the number of pixels the user has scrolled from the top
   const handleScroll = () => setScrollTop(window.scrollY);
-  
 
   useEffect(() => {
     const windowHeight = window.innerHeight;
     const pageHeight = document.documentElement.scrollHeight;
     const actualHeight = pageHeight - windowHeight;
+    //percent of the page the user has currently scrolled based on above pixels
     const scrollProgress = 100 * (scrollTop / actualHeight);
-    console.log("scrolltop:", scrollTop);
+    console.log("scrolled from the top:", scrollTop);
     console.log("window height:", windowHeight, "page height:", pageHeight);
-    console.log("actual height:", actualHeight);
+    console.log("actual page height:", actualHeight);
     console.log("percent scrolled:", scrollProgress);
+    //listener to store the amount scrolled
     window.addEventListener("scroll", handleScroll);
-    
+    //TODO: add variable for window width above, to help us detect if user is
+    //mobile or not, and adjust the scroll percentage breakpoint as necessary
+    //scroll percentage breakpoint
     if (scrollProgress > 30) {
       setShowContent(true);
+    } else {
+      setShowContent(false);
     }
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
+    //useEffect executes every time scrollTop changes, i.e whenever the user scrolls
   }, [scrollTop]);
+
   return (
     <>
-      <section style={{
-        height: 4000,
-      }} >
+      <section
+        style={{
+          //arbitrary page height, might need tweaking for mobile/desktop
+          height: 4000,
+        }}
+      >
         <Box
           sx={{
             pt: 4,
@@ -118,58 +122,9 @@ export default function Home() {
         <Divider component="div" role="presentation">
           <Typography>fancy divider</Typography>
         </Divider>
-        <Slide
-          direction="left"
-          in={showContent}
-          mountOnEnter
-          unmountOnExit
-          {...(showContent ? { timeout: 1000 } : { timeout: 500 })}
-        >
-          <Container
-            sx={{
-              paddingTop: 2,
-              paddingBottom: 4,
-            }}
-            maxWidth="md"
-          >
-            <Grid container spacing={4}>
-              {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      border: 0.5,
-                      borderRadius: 10,
-                      borderColor: theme.palette.tertiary.main,
-                    }}
-                  >
-                    <CardMedia
-                      component="div"
-                      sx={{
-                        // 16:9
-                        pt: "56.25%",
-                        backgroundSize: "cover",
-                      }}
-                      image="https://source.unsplash.com/random?wallpapers"
-                    />
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Card Name
-                      </Typography>
-                      <Typography>Card Description</Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">view</Button>
-                      <Button size="small">edit</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
-        </Slide>
+        {/* content here will show in middle of the page, 
+        will slide from right to left as the user scrolls*/}
+        <HomeMiddleContent showContent={showContent} />
       </section>
     </>
   );
