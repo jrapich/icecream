@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  Divider,
-} from "@mui/material";
+import { Container, Typography, Divider } from "@mui/material";
 import {
   HomeTopContent,
   HomeMiddleContent,
@@ -45,11 +40,14 @@ export default function Home() {
 
   return (
     <>
-      <Container maxWidth="lg" sx={{
-        //arbitrary page height
-        //will need to update for optimal mobile/desktop middleground breakpoints
-        height:4000,
-      }} >
+      <Container
+        maxWidth="lg"
+        sx={{
+          //arbitrary page height
+          //will need to update for optimal mobile/desktop middleground breakpoints
+          height: 4000,
+        }}
+      >
         <HomeTopContent />
         <Divider component="div" role="presentation">
           <Typography>fancy divider</Typography>
@@ -61,7 +59,7 @@ export default function Home() {
           <Typography>fancy divider</Typography>
         </Divider>
         <HomeBottomContent />
-        </Container>
+      </Container>
     </>
   );
 }

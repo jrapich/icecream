@@ -7,7 +7,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { Outlet } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
-import { CssBaseline, Container, } from "@mui/material";
+import { CssBaseline, Container } from "@mui/material";
 import theme from "./theme";
 
 import { Header, Footer } from "./components";
@@ -38,9 +38,7 @@ function App(error) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
-        <Container component="main">
-              {error?.error || <Outlet />}
-        </Container>
+        <Container component="main">{error?.error || <Outlet />}</Container>
         <Footer />
       </ThemeProvider>
     </ApolloProvider>

@@ -19,11 +19,11 @@ let theme = createTheme({
       main: colors.persianPink,
     },
     primary: {
-      main: colors.frenchMauve
+      main: colors.frenchMauve,
       // contrastText: colors.jade,
     },
     secondary: {
-      main: colors.coralPink
+      main: colors.coralPink,
       // contrastText: colors.jade,
     },
     tertiary: {
@@ -49,7 +49,7 @@ theme = createTheme(theme, {
     MuiToolbar: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.primary.main
+          backgroundColor: theme.palette.primary.main,
         },
       },
     },
