@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Typography, Divider } from "@mui/material";
 import {
+  Header,
   HomeTopContent,
   HomeMiddleContent,
   HomeBottomContent,
@@ -40,8 +41,9 @@ export default function Home() {
 
   return (
     <>
+      <Header />
       <Container
-        maxWidth="lg"
+        maxWidth={false}
         sx={{
           //arbitrary page height
           //will need to update for optimal mobile/desktop middleground breakpoints
