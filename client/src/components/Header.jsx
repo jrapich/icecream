@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -9,10 +8,7 @@ import {
 } from "@mui/material";
 
 export default function Header() {
-  const [grow, setGrow] = useState(false);
-  useEffect(() => {
-    setGrow(true);
-  }, []);
+  
 
   return (
     <>
@@ -24,7 +20,7 @@ export default function Header() {
           zIndex: 1,
         }}
       >
-        <Slide direction="down" in={grow} {...(grow ? { timeout: 1000 } : {})}>
+        <Slide direction="down" in={true} {...{ timeout: 1500 }}>
           <AppBar position="relative">
             <Toolbar>
               <Container>
