@@ -10,7 +10,7 @@ import {
   Slide,
 } from "@mui/material";
 import { PropTypes } from "prop-types";
-import theme from "../theme";
+import theme from "../../theme";
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -29,7 +29,7 @@ export default function HomeMiddleContent({showContent}) {
             paddingTop: 2,
             paddingBottom: 4,
           }}
-          maxWidth="md"
+          maxWidth="lg"
         >
           <Grid container spacing={4}>
             {cards.map((card) => (
