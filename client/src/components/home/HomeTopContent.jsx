@@ -1,69 +1,83 @@
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import theme from "../../theme";
 
 export default function HomeTopContent() {
   return (
-    <Box
-      sx={{
-        pt: 4,
-        pb: 4,
-      }}
-    >
-      <Typography component="h1" variant="h2" align="center" gutterBottom>
-        <i>Welcome</i>
-      </Typography>
-      <Typography variant="h5" align="center" paragraph>
-        paragraph describing your app
-      </Typography>
+    <>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "flex-start",
-          backgroundColor: "whitesmoke",
-          flexWrap: "wrap",
+          backgroundImage: "url(/assets/shop.jpg)",
+          backgroundSize: "cover",
+          backgroundPositionX: "20%",
+          backgroundPositionY: "30%",
+          backgroundRepeat: "no-repeat",
+          height: 400,
+        }}
+      ></Box>
+      <Box
+        component={"section"}
+        sx={{
+          paddingY: 2,
         }}
       >
-        <Typography variant="h6" sx={{ px: 2 }}>
-          main text color &quot;russian violet&quot;
+        <Typography component="h1" variant="h5" align="center">
+          <i>Old Fashioned Ice Cream</i>
         </Typography>
-        <Typography
-          variant="h6"
-          sx={{ px: 2, color: theme.palette.primary.main }}
+        <Typography variant="body2" align="center" paragraph>
+          Family owned and operated since 1978!
+        </Typography>
+        <Container
+          component={"div"}
+          disableGutters
+          maxWidth={"disabled"}
+          sx={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            backgroundColor: "whitesmoke",
+            flexWrap: "wrap",
+          }}
         >
-          primary color &quot;french mauve&quot;
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{ px: 2, color: theme.palette.secondary.main }}
-        >
-          secondary color &quot;coral pink&quot;
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{ px: 2, color: theme.palette.tertiary.main }}
-        >
-          tertiary color &quot;plum&quot;
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{ px: 2, color: theme.palette.background.main }}
-        >
-          background color &quot;persian pink&quot;
-        </Typography>
-        <Typography
-          variant="h6"
-          sx={{ px: 2, color: theme.palette.accent.main }}
-        >
-          accent color &quot;russian violet&quot;
-        </Typography>
+          <Box
+            sx={{
+              backgroundImage: "url(/assets/four-scoops.jpeg)",
+              backgroundSize: "cover",
+              backgroundPositionY: "40%",
+              backgroundRepeat: "no-repeat",
+              height: 600,
+              width: "56.25%",
+            }}
+          ></Box>
+          <Box>
+            <Typography variant="h6" sx={{ px: 2 }}>
+              48+ Flavors
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ px: 2, color: theme.palette.primary.main }}
+            >
+              Homemade Ice Cream
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ px: 2, color: theme.palette.secondary.main }}
+            >
+              Fresh Ingredients
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ px: 2, color: theme.palette.tertiary.main }}
+            >
+              Locally Owned
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ px: 2, color: theme.palette.background.main }}
+            >
+              10+ Oregon Coast Locations
+            </Typography>
+          </Box>
+        </Container>
       </Box>
-      <Typography variant="h6" align="center" sx={{ pt: 4 }} paragraph>
-        checkout theme.js for customizing your colors!
-      </Typography>
-      <Stack sx={{ pb: 2 }} direction="row" spacing={2} justifyContent="center">
-        <Button variant="outlined">Click here</Button>
-        <Button variant="outlined">Or Here</Button>
-      </Stack>
-    </Box>
+    </>
   );
 }
