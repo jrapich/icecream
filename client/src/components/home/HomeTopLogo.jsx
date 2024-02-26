@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 
 export default function HomeTopLogo() {
   return (
-    <>
+    <Container component={"section"} maxWidth={false} disableGutters>
       <Box
         sx={{
           backgroundImage: "url(/assets/shop.jpg)",
@@ -19,6 +19,6 @@ export default function HomeTopLogo() {
       <Typography variant="body2" align="center" paragraph>
         Family owned and operated since 1978!
       </Typography>
-    </>
+    </Container>
   );
 }
