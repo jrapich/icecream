@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import { Header } from "../components";
 import theme from "../theme";
 
@@ -36,6 +36,18 @@ export default function Colors() {
       <Typography variant="h6" sx={{ px: 2, color: theme.palette.accent.main }}>
         accent color &quot;russian violet&quot;
       </Typography>
+      <Typography variant="h6" align="center" sx={{ pt: 4 }} paragraph>
+          checkout theme.js for customizing your colors!
+        </Typography>
+        <Stack
+          sx={{ pb: 2 }}
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+        >
+          <Button variant="outlined">Click here</Button>
+          <Button variant="outlined">Or Here</Button>
+        </Stack>
     </Box>
   );
 }
