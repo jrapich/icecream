@@ -4,28 +4,13 @@ import theme from "../../theme";
 export default function HomeTopContent() {
   return (
     <>
-      <Box
-        sx={{
-          backgroundImage: "url(/assets/shop.jpg)",
-          backgroundSize: "cover",
-          backgroundPositionX: "20%",
-          backgroundPositionY: "30%",
-          backgroundRepeat: "no-repeat",
-          height: 400,
-        }}
-      ></Box>
+      
       <Box
         component={"section"}
         sx={{
           paddingY: 2,
         }}
       >
-        <Typography component="h1" variant="h5" align="center">
-          <i>Old Fashioned Ice Cream</i>
-        </Typography>
-        <Typography variant="body2" align="center" paragraph>
-          Family owned and operated since 1978!
-        </Typography>
         <Container
           component={"div"}
           disableGutters

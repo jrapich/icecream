@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Container, Typography, Divider } from "@mui/material";
 import {
-  Header,
+  HomeTopLogo,
   HomeTopContent,
   HomeMiddleContent,
   HomeBottomContent,
-} from "../components";
+} from "../components/home";
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
@@ -41,7 +41,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <Container
         maxWidth={false}
         sx={{
@@ -50,6 +49,7 @@ export default function Home() {
           height: 4000,
         }}
       >
+        <HomeTopLogo />
         <HomeTopContent />
         <Divider component="div" role="presentation">
           <Typography>fancy divider</Typography>
