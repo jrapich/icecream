@@ -38,7 +38,14 @@ function App(error) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
-        <Container component="main" disableGutters={true} maxWidth={false}>
+        <Container
+          component="main"
+          disableGutters
+          maxWidth={false}
+          sx={{
+            padding: 0,
+          }}
+        >
           {error?.error || <Outlet />}
         </Container>
         <Footer />

@@ -40,28 +40,29 @@ export default function Home() {
   }, [scrollTop]);
 
   return (
-    <>
-      <Container
-        maxWidth={false}
-        sx={{
-          //arbitrary page height
-          //will need to update for optimal mobile/desktop middleground breakpoints
-          height: 4000,
-        }}
-      >
-        <HomeTopLogo />
-        <HomeTopContent />
-        <Divider component="div" role="presentation">
-          <Typography>fancy divider</Typography>
-        </Divider>
-        {/* content here will show in middle of the page, 
+    <Container
+      component={"section"}
+      maxWidth={false}
+      disableGutters
+      sx={{
+        //arbitrary page height
+        //will need to update for optimal mobile/desktop middleground breakpoints
+        height: 4000,
+        padding: 0,
+      }}
+    >
+      <HomeTopLogo />
+      <HomeTopContent />
+      <Divider component="div" role="presentation">
+        <Typography>fancy divider</Typography>
+      </Divider>
+      {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-        <HomeMiddleContent showContent={showContent} />
-        <Divider component="div" role="presentation">
-          <Typography>fancy divider</Typography>
-        </Divider>
-        <HomeBottomContent />
-      </Container>
-    </>
+      <HomeMiddleContent showContent={showContent} />
+      <Divider component="div" role="presentation">
+        <Typography>fancy divider</Typography>
+      </Divider>
+      <HomeBottomContent />
+    </Container>
   );
 }
