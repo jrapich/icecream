@@ -13,6 +13,7 @@ export default function Header() {
   return (
     <>
       <Box
+      component={"header"}
         sx={{
           position: "sticky",
           top: 0,
@@ -21,7 +22,7 @@ export default function Header() {
         }}
       >
         <Slide direction="down" in={true} {...{ timeout: 1500 }}>
-          <AppBar position="relative">
+          <AppBar component={"div"} position="relative">
             <Toolbar>
               <Container>
                 <Typography variant="h5" color="inherit" align="center" noWrap>
