@@ -25,8 +25,8 @@ export default function Header() {
           <AppBar component={"div"} position="relative">
             <Toolbar>
               <Container>
-                <Typography variant="h5" color="inherit" align="center" noWrap>
-                  Header
+                <Typography variant="h6" color="inherit" align="center" noWrap>
+                  <i>BJ's Ice Cream</i>
                 </Typography>
               </Container>
             </Toolbar>
