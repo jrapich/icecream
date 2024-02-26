@@ -26,7 +26,7 @@ export default function Header() {
             <Toolbar>
               <Container>
                 <Typography variant="h6" color="inherit" align="center" noWrap>
-                  <i>BJ's Ice Cream</i>
+                  <i>BJ&apos;s Ice Cream</i>
                 </Typography>
               </Container>
             </Toolbar>
