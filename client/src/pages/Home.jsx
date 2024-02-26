@@ -9,7 +9,8 @@ import {
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
-  const [showContent, setShowContent] = useState(true);
+  const [showTopContent, setShowTopContent] = useState(true);
+  const [showMidContent, setShowMidContent] = useState(true);
 
   //set scrollTop state to the number of pixels the user has scrolled from the top
   const handleScroll = () => setScrollTop(window.scrollY);
@@ -29,10 +30,15 @@ export default function Home() {
     //TODO: add variable for window width above, to help us detect if user is
     //mobile or not, and adjust the scroll percentage breakpoint as necessary
     //scroll percentage breakpoint
-    if (scrollProgress > 30) {
-      setShowContent(true);
+    if (scrollProgress > 8) {
+      setShowTopContent(true);
     } else {
-      setShowContent(false);
+      setShowTopContent(false);
+    }
+    if (scrollProgress > 30) {
+      setShowMidContent(true);
+    } else {
+      setShowMidContent(false);
     }
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -52,13 +58,13 @@ export default function Home() {
       }}
     >
       <HomeTopLogo />
-      <HomeTopContent />
+      <HomeTopContent showContent={showTopContent} />
       <Divider component="div" role="presentation">
         <Typography>fancy divider</Typography>
       </Divider>
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-      <HomeMiddleContent showContent={showContent} />
+      <HomeMiddleContent showContent={showMidContent} />
       <Divider component="div" role="presentation">
         <Typography>fancy divider</Typography>
       </Divider>
