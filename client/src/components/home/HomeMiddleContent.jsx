@@ -10,26 +10,52 @@ import {
   Slide,
 } from "@mui/material";
 import { PropTypes } from "prop-types";
-import theme from "../../theme";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3,];
 
 export default function HomeMiddleContent({ showContent }) {
   return (
     <Slide
       direction="left"
       in={showContent}
-      mountOnEnter
       unmountOnExit
       {...(showContent ? { timeout: 1000 } : { timeout: 500 })}
     >
       <Container
+        disableGutters
         sx={{
           paddingTop: 2,
           paddingBottom: 4,
         }}
         maxWidth="lg"
       >
+        <Typography paragraph variant="h6" sx={{
+          paddingX: 2,
+        }} >
+          {/*TODO: this is pseudocode. convert this list to something with an MUI component, Icons, etc */}
+          {/* can possibly move this to its own fade in component, and click a button to slide the cards below from the right */}
+        Introducing a freeze dried range of novelty snacks!
+        <div>Take your favorite Ice Cream flavors with you on the go, or store them for years to come!</div>
+        <ul>
+          Including: 
+          {/* possibly convert this list into the cards below with images attached */}
+          <li>Ice Cream!</li>
+          <li>Fudge!</li>
+          <li>Salt Water Taffy!</li>
+        </ul>
+        <div>Perfect for:</div>
+        <ul>
+          <li>Camping</li>
+          <li>Hiking</li>
+          <li>Picnics</li>
+        </ul>
+        <div>
+          {/* move this possibly to the bottom of the card images */}
+          Feel free to stop by any of our locations(link) to give them a try,
+          or use the form here(link) to place an order with us and we'll ship
+          it to you, anywhere in the lower 48.
+        </div>
+        </Typography>
         <Grid container spacing={4}>
           {cards.map((card) => (
             <Grid item key={card} xs={12} sm={6} md={4}>
@@ -38,9 +64,7 @@ export default function HomeMiddleContent({ showContent }) {
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  border: 0.5,
                   borderRadius: 10,
-                  borderColor: theme.palette.tertiary.main,
                 }}
               >
                 <CardMedia
@@ -54,13 +78,13 @@ export default function HomeMiddleContent({ showContent }) {
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Card Name
+                    Product Name
                   </Typography>
-                  <Typography>Card Description</Typography>
+                  <Typography>Product Description</Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">view</Button>
-                  <Button size="small">edit</Button>
+                  <Button size="small">$9.99</Button>
+                  <Button size="small">Order Here</Button>
                 </CardActions>
               </Card>
             </Grid>
