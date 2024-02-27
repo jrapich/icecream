@@ -18,6 +18,7 @@ export default function MiddleContent({ showContent }) {
   const { showMidHeader, showMidContent } = showContent;
   return (
     <Container
+    component={"section"}
       disableGutters
       sx={{
         paddingTop: 2,
