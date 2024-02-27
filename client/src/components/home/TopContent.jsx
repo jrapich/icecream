@@ -7,7 +7,7 @@ import {
   ImageListItem,
 } from "@mui/material";
 import { PropTypes } from "prop-types";
-import theme from "../../theme";
+//import theme from "../../theme";
 
 import imageList from "../../utils/imageList";
 

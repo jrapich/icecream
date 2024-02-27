@@ -7,10 +7,12 @@ import {
   BottomContent,
 } from "../components/home";
 
+import theme from "../theme";
+
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
   const [showTopContent, setShowTopContent] = useState(false);
-  const [showMidHeader, setShowMidHeader] = useState(false,)
+  const [showMidHeader, setShowMidHeader] = useState(false);
   const [showMidContent, setShowMidContent] = useState(false);
 
   //set scrollTop state to the number of pixels the user has scrolled from the top
@@ -65,14 +67,24 @@ export default function Home() {
     >
       <TopLogo />
       <TopContent showContent={showTopContent} />
-      <Divider component="div" role="presentation">
-        <Typography component={"h2"} variant="h3" >New Products!</Typography>
+      <Divider
+        component="div"
+        role="presentation"
+        sx={{
+          backgroundColor: theme.palette.secondary.main,
+        }}
+      >
+        <Typography component={"h2"} variant="h3">
+          New Products!
+        </Typography>
       </Divider>
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-      <MiddleContent showContent={{showMidHeader, showMidContent}} />
+      <MiddleContent showContent={{ showMidHeader, showMidContent }} />
       <Divider component="div" role="presentation">
-        <Typography component={"h2"} variant="h3" >CONTACT US</Typography>
+        <Typography component={"h2"} variant="h3">
+          CONTACT US
+        </Typography>
       </Divider>
       <BottomContent />
     </Container>
