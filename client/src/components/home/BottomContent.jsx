@@ -1,6 +1,6 @@
 
 
-export default function HomeBottomContent() {
+export default function BottomContent() {
     return(
         <div>bottom in development</div>
     );

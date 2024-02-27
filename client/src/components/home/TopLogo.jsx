@@ -27,7 +27,7 @@ const logo3 = (
 );
 
 
-export default function HomeTopLogo() {
+export default function TopLogo() {
   return (
     <Container component={"section"} maxWidth={false} disableGutters>
       <Fade in appear timeout={2000}>{logo}</Fade>

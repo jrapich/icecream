@@ -64,7 +64,7 @@ const content = (
   </Container>
 );
 
-export default function HomeTopContent({showContent}) {
+export default function TopContent({showContent}) {
   return (
     <Box
       component={"section"}
@@ -79,6 +79,6 @@ export default function HomeTopContent({showContent}) {
   );
 }
 
-HomeTopContent.propTypes = {
+TopContent.propTypes = {
   showContent: PropTypes.bool,
 };

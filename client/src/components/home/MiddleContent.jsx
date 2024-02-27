@@ -14,7 +14,7 @@ import { PropTypes } from "prop-types";
 
 const cards = [1, 2, 3];
 
-export default function HomeMiddleContent({ showContent }) {
+export default function MiddleContent({ showContent }) {
   const { showMidHeader, showMidContent } = showContent;
   return (
     <Container
@@ -109,6 +109,6 @@ export default function HomeMiddleContent({ showContent }) {
   );
 }
 
-HomeMiddleContent.propTypes = {
+MiddleContent.propTypes = {
   showContent: PropTypes.object,
 };

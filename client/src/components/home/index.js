@@ -1,6 +1,6 @@
-import HomeTopLogo from "./HomeTopLogo";
-import HomeTopContent from "./HomeTopContent";
-import HomeMiddleContent from "./HomeMiddleContent";
-import HomeBottomContent from "./HomeBottomContent";
+import TopLogo from "./TopLogo";
+import TopContent from "./TopContent";
+import MiddleContent from "./MiddleContent";
+import BottomContent from "./BottomContent";
 
-export {HomeTopLogo, HomeTopContent, HomeMiddleContent, HomeBottomContent};
+export { TopLogo, TopContent, MiddleContent, BottomContent };

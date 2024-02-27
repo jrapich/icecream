@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, Typography, Divider } from "@mui/material";
 import {
-  HomeTopLogo,
-  HomeTopContent,
-  HomeMiddleContent,
-  HomeBottomContent,
+  TopLogo,
+  TopContent,
+  MiddleContent,
+  BottomContent,
 } from "../components/home";
 
 export default function Home() {
@@ -63,18 +63,18 @@ export default function Home() {
         padding: 0,
       }}
     >
-      <HomeTopLogo />
-      <HomeTopContent showContent={showTopContent} />
+      <TopLogo />
+      <TopContent showContent={showTopContent} />
       <Divider component="div" role="presentation">
         <Typography component={"h2"} variant="h3" >New Products!</Typography>
       </Divider>
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-      <HomeMiddleContent showContent={{showMidHeader, showMidContent}} />
+      <MiddleContent showContent={{showMidHeader, showMidContent}} />
       <Divider component="div" role="presentation">
         <Typography component={"h2"} variant="h3" >CONTACT US</Typography>
       </Divider>
-      <HomeBottomContent />
+      <BottomContent />
     </Container>
   );
 }
