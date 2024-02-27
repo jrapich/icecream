@@ -20,7 +20,7 @@ export default function Home() {
     const pageHeight = document.documentElement.scrollHeight;
     const actualHeight = pageHeight - windowHeight;
     //percent of the page the user has currently scrolled based on above pixels
-    const scrollProgress = 100 * (scrollTop / actualHeight);
+    const scrollProgress = 100 * (scrollTop / 5000);
     console.log("scrolled from the top:", scrollTop);
     console.log("window height:", windowHeight, "page height:", pageHeight);
     console.log("actual page height:", actualHeight);
@@ -35,7 +35,7 @@ export default function Home() {
     } else {
       setShowTopContent(false);
     }
-    if (scrollProgress > 30) {
+    if (scrollProgress > 20) {
       setShowMidContent(true);
     } else {
       setShowMidContent(false);
@@ -53,7 +53,7 @@ export default function Home() {
       sx={{
         //arbitrary page height
         //will need to update for optimal mobile/desktop middleground breakpoints
-        height: 4000,
+        height: 5000,
         padding: 0,
       }}
     >
