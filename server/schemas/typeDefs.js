@@ -3,6 +3,7 @@ const typeDefs = `
         name: String
         email: String
         order: String
+        orderID: String
     }
     
     input OrderBody {
