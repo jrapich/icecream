@@ -2,11 +2,11 @@ import { createTheme } from "@mui/material/styles";
 
 //color palette object
 const colors = {
-  russianViolet: "#441151",
-  plum: "#883677",
-  frenchMauve: "#CA61C3",
-  persianPink: "#EE85B5",
-  coralPink: "#FF958C",
+  russianViolet: "#441151", //text
+  plum: "#883677",          //tertiary 
+  frenchMauve: "#CA61C3",   //primary
+  persianPink: "#EE85B5",   //background
+  coralPink: "#FF958C",     //secondary
 };
 
 // Create our theme palette
