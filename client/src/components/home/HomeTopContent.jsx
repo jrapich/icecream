@@ -52,7 +52,7 @@ const content = (
         variant="h6"
         sx={{ px: 2, color: theme.palette.tertiary.main }}
       >
-        Locally Owned
+        Salt Water Taffy
       </Typography>
       <Typography
         variant="h6"

@@ -9,8 +9,9 @@ import {
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
-  const [showTopContent, setShowTopContent] = useState(true);
-  const [showMidContent, setShowMidContent] = useState(true);
+  const [showTopContent, setShowTopContent] = useState(false);
+  const [showMidHeader, setShowMidHeader] = useState(false,)
+  const [showMidContent, setShowMidContent] = useState(false);
 
   //set scrollTop state to the number of pixels the user has scrolled from the top
   const handleScroll = () => setScrollTop(window.scrollY);
@@ -36,6 +37,11 @@ export default function Home() {
       setShowTopContent(false);
     }
     if (scrollProgress > 20) {
+      setShowMidHeader(true);
+    } else {
+      setShowMidHeader(false);
+    }
+    if (scrollProgress > 30) {
       setShowMidContent(true);
     } else {
       setShowMidContent(false);
@@ -60,13 +66,13 @@ export default function Home() {
       <HomeTopLogo />
       <HomeTopContent showContent={showTopContent} />
       <Divider component="div" role="presentation">
-        <Typography>fancy divider</Typography>
+        <Typography component={"h2"} variant="h3" >New Products!</Typography>
       </Divider>
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-      <HomeMiddleContent showContent={showMidContent} />
+      <HomeMiddleContent showContent={{showMidHeader, showMidContent}} />
       <Divider component="div" role="presentation">
-        <Typography>fancy divider</Typography>
+        <Typography component={"h2"} variant="h3" >CONTACT US</Typography>
       </Divider>
       <HomeBottomContent />
     </Container>
