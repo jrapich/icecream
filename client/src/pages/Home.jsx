@@ -1,138 +1,92 @@
+import { useState, useEffect } from "react";
+import { Container, Typography, Divider } from "@mui/material";
 import {
-  Box,
-  Container,
-  Typography,
-  Stack,
-  Button,
-  Grid,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Divider,
-} from "@mui/material";
+  TopLogo,
+  TopContent,
+  MiddleContent,
+  BottomContent,
+} from "../components/home";
+
 import theme from "../theme";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 export default function Home() {
+  const [scrollTop, setScrollTop] = useState(0);
+  const [showTopContent, setShowTopContent] = useState(false);
+  const [showMidHeader, setShowMidHeader] = useState(false);
+  const [showMidContent, setShowMidContent] = useState(false);
+
+  //set scrollTop state to the number of pixels the user has scrolled from the top
+  const handleScroll = () => setScrollTop(window.scrollY);
+
+  useEffect(() => {
+    const windowHeight = window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    const actualHeight = pageHeight - windowHeight;
+    //percent of the page the user has currently scrolled based on above pixels
+    const scrollProgress = 100 * (scrollTop / 5000);
+    console.log("scrolled from the top:", scrollTop);
+    console.log("window height:", windowHeight, "page height:", pageHeight);
+    console.log("actual page height:", actualHeight);
+    console.log("percent scrolled:", scrollProgress);
+    //listener to store the amount scrolled
+    window.addEventListener("scroll", handleScroll);
+    //TODO: add variable for window width above, to help us detect if user is
+    //mobile or not, and adjust the scroll percentage breakpoint as necessary
+    //scroll percentage breakpoint
+    if (scrollProgress > 8) {
+      setShowTopContent(true);
+    } else {
+      setShowTopContent(false);
+    }
+    if (scrollProgress > 20) {
+      setShowMidHeader(true);
+    } else {
+      setShowMidHeader(false);
+    }
+    if (scrollProgress > 30) {
+      setShowMidContent(true);
+    } else {
+      setShowMidContent(false);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+    //useEffect executes every time scrollTop changes, i.e whenever the user scrolls
+  }, [scrollTop]);
+
   return (
-    <>
-      <section>
-        <Box
-          sx={{
-            pt: 4,
-            pb: 4,
-            borderLeft: 0.5,
-            borderRight: 0.5,
-            borderColor: theme.palette.tertiary.main,
-            borderRadius: 10,
-          }}
-        >
-          <Container maxWidth="md">
-            <Typography component="h1" variant="h2" align="center" gutterBottom>
-              <i>Welcome</i>
-            </Typography>
-            <Typography variant="h5" align="center" paragraph>
-              paragraph describing your app
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-start",
-                backgroundColor: "whitesmoke",
-                flexWrap: "wrap",
-              }}
-            >
-              <Typography variant="h6" sx={{ px: 2 }}>
-                main text color "jade"
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{ px: 2, color: theme.palette.primary.main }}
-              >
-                primary color "air force blue"
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{ px: 2, color: theme.palette.secondary.main }}
-              >
-                secondary color "raisin black"
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{ px: 2, color: theme.palette.tertiary.main }}
-              >
-                tertiary color "silver"
-              </Typography>
-            </Box>
-            <Typography variant="h6" align="center" sx={{ pt: 4 }} paragraph>
-              checkout theme.js for customizing your colors!
-            </Typography>
-            <Stack
-              sx={{ pb: 2 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="outlined">Click here</Button>
-              <Button variant="outlined">Or Here</Button>
-            </Stack>
-          </Container>
-        </Box>
-        <Divider component="div" role="presentation">
-          <Typography>fancy divider</Typography>
-        </Divider>
-        <Container
-          sx={{
-            paddingTop: 2,
-            paddingBottom: 4,
-            borderLeft: 0.5,
-            borderRight: 0.5,
-            borderBottom: 0.5,
-            borderColor: theme.palette.tertiary.main,
-            borderRadius: 10,
-          }}
-          maxWidth="md"
-        >
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    border: 0.5,
-                    borderRadius: 10,
-                    borderColor: theme.palette.tertiary.main,
-                  }}
-                >
-                  <CardMedia
-                    component="div"
-                    sx={{
-                      // 16:9
-                      pt: "56.25%",
-                      backgroundSize: "cover",
-                    }}
-                    image="https://source.unsplash.com/random?wallpapers"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Card Name
-                    </Typography>
-                    <Typography>Card Description</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">view</Button>
-                    <Button size="small">edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </section>
-    </>
+    <Container
+      component={"section"}
+      maxWidth={false}
+      disableGutters
+      sx={{
+        //arbitrary page height
+        //will need to update for optimal mobile/desktop middleground breakpoints
+        height: 5000,
+        padding: 0,
+      }}
+    >
+      <TopLogo />
+      <TopContent showContent={showTopContent} />
+      <Divider
+        component="div"
+        role="presentation"
+        sx={{
+          backgroundColor: theme.palette.secondary.main,
+        }}
+      >
+        <Typography component={"h2"} variant="h3">
+          New Products!
+        </Typography>
+      </Divider>
+      {/* content here will show in middle of the page, 
+        will slide from right to left as the user scrolls*/}
+      <MiddleContent showContent={{ showMidHeader, showMidContent }} />
+      <Divider component="div" role="presentation">
+        <Typography component={"h2"} variant="h3">
+          CONTACT US
+        </Typography>
+      </Divider>
+      <BottomContent />
+    </Container>
   );
 }
