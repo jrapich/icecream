@@ -22,21 +22,19 @@ export default function TopContent({ showContent }) {
     if (imageList.length > 6) {
       imageList.pop();
     }
-    return (
-      imageList.map((item, index) => (
-        <ImageListItem key={item.img}>
-          <img
-            id={index}
-            onClick={handleOpen}
-            srcSet={`${item.img}`}
-            src={`${item.img}`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))
-    );
-  }
+    return imageList.map((item, index) => (
+      <ImageListItem key={item.img}>
+        <img
+          id={index}
+          onClick={handleOpen}
+          srcSet={`${item.img}`}
+          src={`${item.img}`}
+          alt={item.title}
+          loading="lazy"
+        />
+      </ImageListItem>
+    ));
+  };
 
   //MUI components
   const content = (
