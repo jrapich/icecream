@@ -32,6 +32,8 @@ export default function TopContent({ showContent }) {
       }}
     >
       <Box
+        onClick={handleOpen}
+        id={6}
         sx={{
           backgroundImage: "url(/assets/four-scoops.jpeg)",
           backgroundSize: "cover",
