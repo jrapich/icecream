@@ -1,18 +1,23 @@
-import { Modal, Typography, Box } from "@mui/material";
+import { Modal, Box } from "@mui/material";
 import { PropTypes } from "prop-types";
 
 const modalStyle = {
   position: "absolute",
   top: "50%",
   left: "50%",
+  height: "75%",
+  width: "75%",
   transform: "translate(-50%, -50%)",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 0,
+  m: 0,
 };
 
 const imageStyle = {
+  height: "100%",
+  width: "100%",
   maxHeight: "100%",
   maxWidth: "100%",
   padding: 0,
@@ -44,12 +49,6 @@ export default function ImageModal({ imageNumber, handleClose, imageList }) {
           src={`${imageList[imageNumber].img}`}
           alt={imageList[imageNumber].title}
         />
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
       </Box>
     </Modal>
   );
