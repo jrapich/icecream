@@ -5,8 +5,14 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material";
+import { useState } from "react";
+import SubmitModal from "./modals/SubmitModal";
 
 export default function ContactForm() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Container>
       <Box
@@ -56,6 +62,7 @@ export default function ContactForm() {
           }}
         >
           <Button
+            onClick={handleOpen}
             sx={{
               margin: 2,
             }}
@@ -63,6 +70,7 @@ export default function ContactForm() {
           >
             SUBMIT
           </Button>
+          <SubmitModal open={open} handleClose={handleClose} />
         </Box>
       </Box>
     </Container>
