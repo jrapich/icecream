@@ -18,6 +18,25 @@ export default function TopContent({ showContent }) {
     setOpen(event.target.id);
   };
   const handleClose = () => setOpen(null);
+  const mapImageList = () => {
+    if (imageList.length > 6) {
+      imageList.pop();
+    }
+    return (
+      imageList.map((item, index) => (
+        <ImageListItem key={item.img}>
+          <img
+            id={index}
+            onClick={handleOpen}
+            srcSet={`${item.img}`}
+            src={`${item.img}`}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
+      ))
+    );
+  }
 
   //MUI components
   const content = (
@@ -84,18 +103,7 @@ export default function TopContent({ showContent }) {
         cols={3}
         gap={8}
       >
-        {imageList.map((item, index) => (
-          <ImageListItem key={item.img}>
-            <img
-              id={index}
-              onClick={handleOpen}
-              srcSet={`${item.img}`}
-              src={`${item.img}`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
+        {mapImageList()}
       </ImageList>
     </Container>
   );
