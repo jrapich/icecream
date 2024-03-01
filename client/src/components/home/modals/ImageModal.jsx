@@ -22,6 +22,7 @@ const imageStyle = {
   maxWidth: "100%",
   padding: 0,
   margin: 0,
+  objectFit: "contain",
 };
 
 export default function ImageModal({ imageNumber, handleClose, imageList }) {
