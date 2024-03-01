@@ -12,29 +12,16 @@ import ImageModal from "./modals/ImageModal";
 //import theme from "../../theme";
 import imageList from "../../utils/imageList";
 
+//get the first 6 images only from the list to render as woven list
+const imageListWoven = imageList.slice(0, 6);
+
 export default function TopContent({ showContent }) {
   const [open, setOpen] = useState(null);
   const handleOpen = (event) => {
-    setOpen(event.target.id);
+    let number = parseInt(event.target.id);
+    setOpen(number);
   };
   const handleClose = () => setOpen(null);
-  const mapImageList = () => {
-    if (imageList.length > 6) {
-      imageList.pop();
-    }
-    return imageList.map((item, index) => (
-      <ImageListItem key={item.img}>
-        <img
-          id={index}
-          onClick={handleOpen}
-          srcSet={`${item.img}`}
-          src={`${item.img}`}
-          alt={item.title}
-          loading="lazy"
-        />
-      </ImageListItem>
-    ));
-  };
 
   //MUI components
   const content = (
@@ -101,7 +88,18 @@ export default function TopContent({ showContent }) {
         cols={3}
         gap={8}
       >
-        {mapImageList()}
+        {imageListWoven.map((item, index) => (
+        <ImageListItem key={item.img}>
+          <img
+            id={index}
+            onClick={handleOpen}
+            srcSet={`${item.img}`}
+            src={`${item.img}`}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
+      ))}
       </ImageList>
     </Container>
   );
