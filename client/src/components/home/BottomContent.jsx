@@ -1,5 +1,6 @@
 import { Container, Typography, } from "@mui/material";
 import ContactForm from "./ContactForm";
+import Locations from "./Locations";
 
 export default function BottomContent() {
   return (
@@ -10,6 +11,7 @@ export default function BottomContent() {
         Be sure to include your name, email, and shipping address.
     </Typography>
     <ContactForm />
+    <Locations />
   </Container>
   );
 }
