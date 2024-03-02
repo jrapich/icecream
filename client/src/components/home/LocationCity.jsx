@@ -5,8 +5,9 @@ import {
   ListItem,
   ListItemText,
   Link,
+  Tooltip,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import MapIcon from "@mui/icons-material/Map";
 import { PropTypes } from "prop-types";
 
 const sx = {
@@ -24,12 +25,18 @@ export default function LocationCity({ location }) {
             disableGutters
             key={index}
             secondaryAction={
-                <IconButton edge="end" aria-label="delete">
-                  {/* input a map icon here for each map type, google/apple/openstreetmap */}
-                  <Link component={"a"} href={`${item.google}`} target="_blank" color={"inherit"}>
-                    <DeleteIcon />
-                  </Link>
-                </IconButton>             
+              <IconButton edge="end" aria-label="delete">
+                <Link
+                  component={"a"}
+                  href={`${item.google}`}
+                  target="_blank"
+                  color={"inherit"}
+                >
+                  <Tooltip title="view on google maps" arrow>
+                    <MapIcon fontSize="large" />
+                  </Tooltip>
+                </Link>
+              </IconButton>
             }
           >
             <ListItemText
