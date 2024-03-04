@@ -5,8 +5,8 @@ function Copyright() {
     <Typography variant="body2" align="center">
       {"Copyright © "}
       BJ&apos;s Ice Cream {new Date().getFullYear()}
-      <Link color="inherit" href="https://mui.com/">
-        <div>//powered by React + Material UI</div>
+      <Link color="inherit" variant="inherit" underline="none" href="https://mui.com/">
+        <Typography variant="subtitle2" align="center">powered by React + Material UI </Typography>
       </Link>{" "}
     </Typography>
   );
