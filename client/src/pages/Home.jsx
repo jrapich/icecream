@@ -50,17 +50,17 @@ export default function Home() {
     //TODO: add variable for window width above, to help us detect if user is
     //mobile or not, and adjust the scroll percentage breakpoint as necessary
     //scroll percentage breakpoint
-    if (scrollProgress > 8) {
+    if (scrollProgress > 10) {
       setShowTopContent(true);
     } else {
       setShowTopContent(false);
     }
-    if (scrollProgress > 20) {
+    if (scrollProgress > 40) {
       setShowMidHeader(true);
     } else {
       setShowMidHeader(false);
     }
-    if (scrollProgress > 30) {
+    if (scrollProgress > 52) {
       setShowMidContent(true);
     } else {
       setShowMidContent(false);
