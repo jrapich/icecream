@@ -78,7 +78,7 @@ export default function Home() {
       sx={{
         //arbitrary page height
         //will need to update for optimal mobile/desktop middleground breakpoints
-        height: 6200,
+        height: 6600,
         padding: 0,
       }}
     >
