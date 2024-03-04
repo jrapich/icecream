@@ -4,6 +4,7 @@ import MiddleContent from "./MiddleContent";
 import BottomContent from "./BottomContent";
 import Locations from "./subcomponents/Locations";
 import Divider1 from "./subcomponents/Divider";
+import WaveDivider from "./subcomponents/css/WaveDivider.jsx";
 
 export {
   TopLogo,
@@ -12,4 +13,5 @@ export {
   BottomContent,
   Locations,
   Divider1,
+  WaveDivider,
 };

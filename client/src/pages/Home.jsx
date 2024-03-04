@@ -7,6 +7,7 @@ import {
   BottomContent,
   Locations,
   Divider1,
+  WaveDivider,
 } from "../components/home";
 import imageList from "../utils/imageList";
 
@@ -85,12 +86,14 @@ export default function Home() {
 
       <TopContent showContent={showTopContent} />
 
+      <WaveDivider />
       <Divider1 content={"New Products!"} />
 
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
       <MiddleContent showContent={{ showMidHeader, showMidContent }} />
 
+      <WaveDivider />
       <Divider1 content={"CONTACT US"} />
 
       <BottomContent />
