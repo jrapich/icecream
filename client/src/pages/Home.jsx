@@ -8,8 +8,22 @@ import {
   Locations,
   Divider1,
 } from "../components/home";
+import imageList from "../utils/imageList";
 
 //import theme from "../theme";
+
+const bridge = (
+  <img
+    style={{
+      objectFit: "contain",
+      maxWidth: "100%",
+    }}
+    srcSet={`${imageList[7].img}`}
+    src={`${imageList[7].img}`}
+    alt={`${imageList[7].title}`}
+    loading="lazy"
+  />
+);
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
@@ -63,7 +77,7 @@ export default function Home() {
       sx={{
         //arbitrary page height
         //will need to update for optimal mobile/desktop middleground breakpoints
-        height: 5500,
+        height: 6200,
         padding: 0,
       }}
     >
@@ -80,6 +94,20 @@ export default function Home() {
       <Divider1 content={"CONTACT US"} />
 
       <BottomContent />
+
+      <Container
+        sx={{
+          height: 200,
+        }}
+      />
+
+      <Container
+        sx={{
+          mb: 40,
+        }}
+      >
+        {bridge}
+      </Container>
 
       <Divider1 content={"Locations"} />
 
