@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { Container, Typography, Divider } from "@mui/material";
+import { Container } from "@mui/material";
 import {
   TopLogo,
   TopContent,
   MiddleContent,
   BottomContent,
+  Locations,
+  Divider1,
 } from "../components/home";
 
-import theme from "../theme";
+//import theme from "../theme";
 
 export default function Home() {
   const [scrollTop, setScrollTop] = useState(0);
@@ -61,32 +63,27 @@ export default function Home() {
       sx={{
         //arbitrary page height
         //will need to update for optimal mobile/desktop middleground breakpoints
-        height: 5000,
+        height: 5500,
         padding: 0,
       }}
     >
       <TopLogo />
+
       <TopContent showContent={showTopContent} />
-      <Divider
-        component="div"
-        role="presentation"
-        sx={{
-          backgroundColor: theme.palette.secondary.main,
-        }}
-      >
-        <Typography component={"h2"} variant="h3">
-          New Products!
-        </Typography>
-      </Divider>
+
+      <Divider1 content={"New Products!"} />
+
       {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
       <MiddleContent showContent={{ showMidHeader, showMidContent }} />
-      <Divider component="div" role="presentation">
-        <Typography component={"h2"} variant="h3">
-          CONTACT US
-        </Typography>
-      </Divider>
+
+      <Divider1 content={"CONTACT US"} />
+
       <BottomContent />
+
+      <Divider1 content={"Locations"} />
+
+      <Locations />
     </Container>
   );
 }
