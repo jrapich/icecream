@@ -14,7 +14,8 @@ const four = "assets/4-icecream.jpg";
 const five = "/assets/5-Bjs_Sign.webp";
 const six = "/assets/6-icecream.JPG";
 const seven = "/assets/four-scoops.jpeg";
-const eight = "/assets/bridge.jpg"
+const eight = "/assets/bridge.jpg";
+const nine = "/assets/freeze.jpg";
 
 const imageList = [
   { img: one, title: "bjs logo" },
@@ -24,7 +25,8 @@ const imageList = [
   { img: five, title: "bjs sign" },
   { img: six, title: "icecream" },
   { img: seven, title: "4scoops" },
-  { img: eight, title: "bridge" },
+  { img: eight, title: "florence bridge" },
+  { img: nine, title: "freeze-dried ice cream" },
 ];
 
 export default imageList;

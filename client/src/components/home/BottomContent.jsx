@@ -9,7 +9,7 @@ export default function BottomContent() {
         other general inquiries you may have. Be sure to include your name,
         email, and shipping address.
       </Typography>
-      <ContactForm />
+      <ContactForm id={"contact"} />
     </Container>
   );
 }

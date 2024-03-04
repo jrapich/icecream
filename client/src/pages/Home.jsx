@@ -114,7 +114,7 @@ export default function Home() {
 
       <Divider1 content={"Locations"} />
 
-      <Locations />
+      <Locations id={"locations"} />
     </Container>
   );
 }
