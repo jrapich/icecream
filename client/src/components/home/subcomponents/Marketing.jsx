@@ -1,10 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import List from "@mui/material/List";
+import Link from "@mui/material/Link";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
 import FireplaceIcon from "@mui/icons-material/Fireplace";
 import HikingIcon from "@mui/icons-material/Hiking";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
@@ -132,8 +131,8 @@ export default function Marketing() {
         </Box>
       </Box>
       <Typography variant="h6" paragraph>
-        Feel free to stop by any of our locations(link) to give them a try, or
-        use the form here(link) to place an order with us and we&apos;ll ship it
+        Feel free to stop by any of our <Link href="#locations" variant="inherit" >locations</Link> to give them a try, or
+        use the form <Link href="#contact" variant="inherit" >here</Link> to place an order with us and we&apos;ll ship it
         to you, anywhere in the lower 48
       </Typography>
     </Box>
