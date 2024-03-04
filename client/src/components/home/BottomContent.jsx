@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import ContactForm from "./ContactForm";
+import ContactForm from "./subcomponents/ContactForm";
 
 export default function BottomContent() {
   return (

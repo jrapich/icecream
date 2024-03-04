@@ -7,7 +7,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LocationCity from "./LocationCity";
 
-import locations from "../../utils/locations";
+import locations from "../../../utils/locations";
 
 
 export default function Locations() {

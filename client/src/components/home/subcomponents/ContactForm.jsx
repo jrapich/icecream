@@ -3,10 +3,10 @@ import {
   Button,
   Container,
   TextField,
-  InputAdornment,
+  //InputAdornment,
 } from "@mui/material";
 import { useState } from "react";
-import SubmitModal from "./modals/SubmitModal";
+import SubmitModal from "../modals/SubmitModal";
 
 export default function ContactForm() {
   const [open, setOpen] = useState(false);
