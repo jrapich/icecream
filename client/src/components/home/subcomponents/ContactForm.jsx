@@ -14,10 +14,12 @@ export default function ContactForm() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Container>
+    <Container maxWidth="sm" sx={{
+    }} >
       <Box
         sx={{
           display: "flex",
+          justifyContent: "space-between",
           height: "20%",
           pb: 4,
         }}

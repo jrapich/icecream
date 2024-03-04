@@ -105,6 +105,8 @@ export default function Home() {
       />
 
       <Container
+        maxWidth={false}
+        disableGutters
         sx={{
           mb: 40,
         }}
@@ -114,7 +116,11 @@ export default function Home() {
 
       <Divider1 content={"Locations"} />
 
-      <Locations id={"locations"} />
+      <Container component={"section"} maxWidth="lg" id={"locations"} sx={{
+        mt: 4,
+      }} >
+        <Locations />
+      </Container>
     </Container>
   );
 }
