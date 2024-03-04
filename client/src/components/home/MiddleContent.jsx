@@ -7,7 +7,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Slide,
+  Grow,
   Fade,
 } from "@mui/material";
 import Marketing from "./subcomponents/Marketing";
@@ -34,10 +34,10 @@ export default function MiddleContent({ showContent }) {
           <Marketing />
         </Container>
       </Fade>
-      <Slide
+      <Grow
         direction="left"
         in={showMidContent}
-        unmountOnExit
+        
         {...(showMidContent ? { timeout: 1000 } : { timeout: 500 })}
       >
         <Grid container spacing={4}>
@@ -74,7 +74,7 @@ export default function MiddleContent({ showContent }) {
             </Grid>
           ))}
         </Grid>
-      </Slide>
+      </Grow>
     </Container>
   );
 }

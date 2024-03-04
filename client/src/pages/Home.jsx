@@ -60,7 +60,7 @@ export default function Home() {
     } else {
       setShowMidHeader(false);
     }
-    if (scrollProgress > 52) {
+    if (scrollProgress > 56) {
       setShowMidContent(true);
     } else {
       setShowMidContent(false);
