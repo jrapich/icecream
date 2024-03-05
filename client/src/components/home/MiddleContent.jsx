@@ -7,9 +7,10 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Slide,
+  Grow,
   Fade,
 } from "@mui/material";
+import Marketing from "./subcomponents/Marketing";
 import { PropTypes } from "prop-types";
 
 const cards = [1, 2, 3];
@@ -19,7 +20,6 @@ export default function MiddleContent({ showContent }) {
   return (
     <Container
     component={"section"}
-      disableGutters
       sx={{
         paddingTop: 2,
         paddingBottom: 4,
@@ -30,45 +30,13 @@ export default function MiddleContent({ showContent }) {
       in={showMidHeader}
       appear
       >
-        <Typography
-          paragraph
-          variant="h6"
-          sx={{
-            paddingX: 2,
-          }}
-        >
-          {/*TODO: this is pseudocode. convert this list to something with an MUI component, Icons, etc */}
-          {/* can possibly move this to its own fade in component, and click a button to slide the cards below from the right */}
-          Introducing a freeze dried range of novelty snacks!
-          <div>
-            Take your favorite Ice Cream flavors with you on the go, or store
-            them for years to come!
-          </div>
-          <ul>
-            Including:
-            {/* possibly convert this list into the cards below with images attached */}
-            <li>Ice Cream!</li>
-            <li>Fudge!</li>
-            <li>Salt Water Taffy!</li>
-          </ul>
-          <div>Perfect for:</div>
-          <ul>
-            <li>Camping</li>
-            <li>Hiking</li>
-            <li>Picnics</li>
-          </ul>
-          <div>
-            {/* move this possibly to the bottom of the card images */}
-            Feel free to stop by any of our locations(link) to give them a try,
-            or use the form here(link) to place an order with us and we&apos;ll
-            ship it to you, anywhere in the lower 48.
-          </div>
-        </Typography>
+        <Container maxWidth={"lg"}>
+          <Marketing />
+        </Container>
       </Fade>
-      <Slide
-        direction="left"
+      <Grow
         in={showMidContent}
-        unmountOnExit
+        
         {...(showMidContent ? { timeout: 1000 } : { timeout: 500 })}
       >
         <Grid container spacing={4}>
@@ -105,7 +73,7 @@ export default function MiddleContent({ showContent }) {
             </Grid>
           ))}
         </Grid>
-      </Slide>
+      </Grow>
     </Container>
   );
 }

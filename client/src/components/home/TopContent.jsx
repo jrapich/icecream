@@ -12,10 +12,14 @@ import ImageModal from "./modals/ImageModal";
 //import theme from "../../theme";
 import imageList from "../../utils/imageList";
 
+//get the first 6 images only from the list to render as woven list
+const imageListWoven = imageList.slice(0, 6);
+
 export default function TopContent({ showContent }) {
   const [open, setOpen] = useState(null);
   const handleOpen = (event) => {
-    setOpen(event.target.id);
+    let number = parseInt(event.target.id);
+    setOpen(number);
   };
   const handleClose = () => setOpen(null);
 
@@ -32,6 +36,8 @@ export default function TopContent({ showContent }) {
       }}
     >
       <Box
+        onClick={handleOpen}
+        id={6}
         sx={{
           backgroundImage: "url(/assets/four-scoops.jpeg)",
           backgroundSize: "cover",
@@ -39,6 +45,7 @@ export default function TopContent({ showContent }) {
           backgroundRepeat: "no-repeat",
           height: 600,
           width: "56.25%",
+          borderRadius: 10,
         }}
       ></Box>
       <Box
@@ -82,9 +89,12 @@ export default function TopContent({ showContent }) {
         cols={3}
         gap={8}
       >
-        {imageList.map((item, index) => (
+        {imageListWoven.map((item, index) => (
           <ImageListItem key={item.img}>
             <img
+              style={{
+                borderRadius: 10,
+              }}
               id={index}
               onClick={handleOpen}
               srcSet={`${item.img}`}
@@ -103,7 +113,7 @@ export default function TopContent({ showContent }) {
       component={"section"}
       sx={{
         paddingY: 2,
-        backgroundColor: "whitesmoke",
+        //backgroundColor: "whitesmoke",
       }}
     >
       <Zoom

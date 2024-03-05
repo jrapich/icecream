@@ -1,30 +1,31 @@
 import { Link, Box, Typography } from "@mui/material";
+import Divider from "@mui/material/Divider";
 
 function Copyright() {
   return (
-    <Typography variant="body2" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        FOOTER//powered by React/Material UI
+    <Box>
+      <Typography variant="body2" align="center">
+        {"Copyright © "} BJ&apos;s Ice Cream {new Date().getFullYear()}
+      </Typography>
+      <Link
+        color="inherit"
+        variant="inherit"
+        underline="none"
+        href="https://mui.com/"
+      >
+        <Typography variant="subtitle2" align="center">
+          powered by React + Material UI{" "}
+        </Typography>
       </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+    </Box>
   );
 }
 
 export default function Footer() {
   return (
-    <>
-      <Box sx={{ p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-    </>
+    <Box sx={{ p: 6 }} component="footer">
+      <Divider />
+      <Copyright />
+    </Box>
   );
 }

@@ -3,10 +3,11 @@ import { createTheme } from "@mui/material/styles";
 //color palette object
 const colors = {
   russianViolet: "#441151", //text
-  plum: "#883677",          //tertiary 
-  frenchMauve: "#CA61C3",   //primary
-  persianPink: "#EE85B5",   //background
-  coralPink: "#FF958C",     //secondary
+  plum: "#883677", //tertiary
+  frenchMauve: "#CA61C3", //primary
+  persianPink: "#EE85B5", //background
+  coralPink: "#FF958C", //secondary
+  lightPink: "#e88dc0", //accent
 };
 
 // Create our theme palette
@@ -30,7 +31,7 @@ let theme = createTheme({
       main: colors.plum,
     },
     accent: {
-      main: colors.russianViolet,
+      main: colors.lightPink,
     },
   },
 });
@@ -49,7 +50,7 @@ theme = createTheme(theme, {
     MuiToolbar: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.tertiary.main,
         },
       },
     },
@@ -72,7 +73,7 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           color: theme.palette.text.main,
-          backgroundColor: theme.palette.primary.dark,
+          backgroundColor: theme.palette.secondary.main,
           borderColor: theme.palette.secondary.main,
         },
       },
@@ -81,7 +82,7 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           color: theme.palette.text.main,
-          backgroundColor: theme.palette.secondary.main,
+          backgroundColor: theme.palette.accent.main,
           borderColor: theme.palette.secondary.main,
         },
       },
@@ -130,6 +131,20 @@ theme = createTheme(theme, {
             color: theme.palette.warning.main,
             backgroundColor: theme.palette.secondary.dark,
           },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.accent.main,
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.accent.main,
         },
       },
     },
