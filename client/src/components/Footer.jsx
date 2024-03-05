@@ -1,4 +1,5 @@
 import { Link, Box, Typography } from "@mui/material";
+import Divider from "@mui/material/Divider";
 
 function Copyright() {
   return (
@@ -23,6 +24,7 @@ function Copyright() {
 export default function Footer() {
   return (
     <Box sx={{ p: 6 }} component="footer">
+      <Divider />
       <Copyright />
     </Box>
   );

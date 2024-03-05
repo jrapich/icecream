@@ -1,12 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import List from "@mui/material/List";
 import Link from "@mui/material/Link";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+// import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import FireplaceIcon from "@mui/icons-material/Fireplace";
-import HikingIcon from "@mui/icons-material/Hiking";
-import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
+// import FireplaceIcon from "@mui/icons-material/Fireplace";
+// import HikingIcon from "@mui/icons-material/Hiking";
+// import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 
 import imageList from "../../../utils/imageList";
 
@@ -16,6 +16,7 @@ const image = (
       objectFit: "contain",
       maxHeight: "100%",
       maxWidth: "100%",
+      borderRadius: 10,
     }}
     srcSet={`${imageList[8].img}`}
     src={`${imageList[8].img}`}
@@ -24,9 +25,18 @@ const image = (
   />
 );
 
+//these lists woucl dporbably be entyirely rewritten as the repsonsiveness of them sucks.
+
 export default function Marketing() {
   return (
-    <Box>
+    <Container
+      maxWidth={"lg"}
+      disableGutters
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -37,11 +47,13 @@ export default function Marketing() {
         <Typography variant="h4" paragraph>
           Introducing our freeze dried range of novelty snacks!
         </Typography>
-        <Typography sx={{
+        <Typography
+          sx={{
             paddingY: 2,
-        }} >
-            Take your favorite Ice Cream flavors with you on the go, or store
-            them for years to come!
+          }}
+        >
+          Take your favorite Ice Cream flavors with you on the go, or store them
+          for years to come!
         </Typography>
       </Box>
       {/* first list */}
@@ -49,22 +61,20 @@ export default function Marketing() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
-          my: 10
+          alignItems: "center",
+          my: 10,
         }}
       >
         <Box
           sx={{
             display: "flex",
-            justifyContent: "flex-start",
-            pl: 4,
           }}
         >
           <Box
             sx={{
-              height: 200,
-              width: 200,
-              pr:2,
+              height: 300,
+              width: 300,
+              px: 2,
             }}
           >
             {image}
@@ -77,7 +87,7 @@ export default function Marketing() {
               <ListItemText primary="Fudge!" />
             </ListItem>
             <ListItem disablePadding>
-              <ListItemText primary="Salt Water Taffy!" />
+              <ListItemText primary="Taffy!" />
             </ListItem>
           </List>
         </Box>
@@ -87,22 +97,20 @@ export default function Marketing() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-end",
-          my:10
+          alignItems: "center",
+          my: 10,
         }}
       >
         <Box
           sx={{
             display: "flex",
-            justifyContent: "flex-start",
-            pr: 4,
           }}
         >
           <Box
             sx={{
-              height: 200,
-              width: 200,
-              pr:2,
+              height: 300,
+              width: 300,
+              px: 2,
             }}
           >
             {image}
@@ -110,31 +118,38 @@ export default function Marketing() {
           <List>
             Perfect for:
             <ListItem disablePadding>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 <FireplaceIcon />
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary="Camping" />
             </ListItem>
             <ListItem disablePadding>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 <HikingIcon />
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary="Hiking" />
             </ListItem>
             <ListItem disablePadding>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 <TableRestaurantIcon />
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary="Picnics" />
             </ListItem>
           </List>
         </Box>
       </Box>
       <Typography variant="h6" paragraph>
-        Feel free to stop by any of our <Link href="#locations" variant="inherit" >locations</Link> to give them a try, or
-        use the form <Link href="#contact" variant="inherit" >here</Link> to place an order with us and we&apos;ll ship it
-        to you, anywhere in the lower 48
+        Feel free to stop by any of our locations{" "}
+        <Link href="#locations" variant="inherit" color={"inherit"}>
+          here
+        </Link>{" "}
+        to give them a try, or use the form{" "}
+        <Link href="#contact" variant="inherit" color={"inherit"}>
+          here
+        </Link>{" "}
+        to place an order with us and we&apos;ll ship it to you, anywhere in the
+        lower 48
       </Typography>
-    </Box>
+    </Container>
   );
 }

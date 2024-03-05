@@ -1,5 +1,6 @@
 import { Modal, Box } from "@mui/material";
 import { PropTypes } from "prop-types";
+import theme from "../../../theme";
 
 const modalStyle = {
   position: "absolute",
@@ -8,7 +9,7 @@ const modalStyle = {
   height: "75%",
   width: "75%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgcolor: `${theme.palette.secondary.main}`,
   border: "2px solid #000",
   boxShadow: 24,
   p: 0,

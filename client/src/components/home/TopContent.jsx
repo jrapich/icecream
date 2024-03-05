@@ -45,6 +45,7 @@ export default function TopContent({ showContent }) {
           backgroundRepeat: "no-repeat",
           height: 600,
           width: "56.25%",
+          borderRadius: 10,
         }}
       ></Box>
       <Box
@@ -89,17 +90,20 @@ export default function TopContent({ showContent }) {
         gap={8}
       >
         {imageListWoven.map((item, index) => (
-        <ImageListItem key={item.img}>
-          <img
-            id={index}
-            onClick={handleOpen}
-            srcSet={`${item.img}`}
-            src={`${item.img}`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
+          <ImageListItem key={item.img}>
+            <img
+              style={{
+                borderRadius: 10,
+              }}
+              id={index}
+              onClick={handleOpen}
+              srcSet={`${item.img}`}
+              src={`${item.img}`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
       </ImageList>
     </Container>
   );
@@ -109,7 +113,7 @@ export default function TopContent({ showContent }) {
       component={"section"}
       sx={{
         paddingY: 2,
-        backgroundColor: "whitesmoke",
+        //backgroundColor: "whitesmoke",
       }}
     >
       <Zoom

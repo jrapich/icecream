@@ -11,7 +11,7 @@ import {
 } from "../components/home";
 import imageList from "../utils/imageList";
 
-//import theme from "../theme";
+import theme from "../theme";
 
 const bridge = (
   <img
@@ -80,7 +80,7 @@ export default function Home() {
       sx={{
         //arbitrary page height
         //will need to update for optimal mobile/desktop middleground breakpoints
-        height: 6600,
+        height: 6800,
         padding: 0,
       }}
     >
@@ -88,14 +88,22 @@ export default function Home() {
 
       <TopContent showContent={showTopContent} />
 
-      <WaveDivider />
-      <Divider1 content={"New Products!"} />
+      <WaveDivider newBackground={theme.palette.primary.main} />
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          backgroundColor: `${theme.palette.primary.main}`,
+        }}
+      >
+        <Divider1 content={"New Products!"} />
 
-      {/* content here will show in middle of the page, 
+        {/* content here will show in middle of the page, 
         will slide from right to left as the user scrolls*/}
-      <MiddleContent showContent={{ showMidHeader, showMidContent }} />
+        <MiddleContent showContent={{ showMidHeader, showMidContent }} />
+        <WaveDivider newBackground={theme.palette.background.main} />
+      </Container>
 
-      <WaveDivider />
       <Divider1 content={"CONTACT US"} />
 
       <BottomContent />
@@ -116,12 +124,26 @@ export default function Home() {
         {bridge}
       </Container>
 
-      <Divider1 content={"Locations"} />
-
-      <Container component={"section"} maxWidth="lg" id={"locations"} sx={{
-        mt: 4,
-      }} >
-        <Locations />
+      <WaveDivider newBackground={theme.palette.primary.main} />
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          height: "10%",
+          backgroundColor: `${theme.palette.primary.main}`,
+        }}
+      >
+        <Divider1 content={"Locations"} />
+        <Container
+          component={"section"}
+          maxWidth={false}
+          id={"locations"}
+          sx={{
+            mt: 4,
+          }}
+        >
+          <Locations />
+        </Container>
       </Container>
     </Container>
   );

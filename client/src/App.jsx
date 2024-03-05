@@ -6,9 +6,9 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { Outlet } from "react-router-dom";
-//import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline, Container } from "@mui/material";
-//import theme from "./theme";
+import theme from "./theme";
 
 import { Header, Footer } from "./components";
 
@@ -35,7 +35,7 @@ const client = new ApolloClient({
 function App(error) {
   return (
     <ApolloProvider client={client}>
-      {/* <ThemeProvider theme={theme}> */}
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
         <Container
@@ -49,7 +49,7 @@ function App(error) {
           {error?.error || <Outlet />}
         </Container>
         <Footer />
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </ApolloProvider>
   );
 }

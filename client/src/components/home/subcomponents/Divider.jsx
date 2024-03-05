@@ -1,4 +1,4 @@
-import { Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { PropTypes } from "prop-types";
 
 const dividerSX = {
@@ -8,11 +8,13 @@ const dividerSX = {
 
 export default function Divider1({ content }) {
   return (
-    <Divider component="div" role="presentation" sx={dividerSX}>
-      <Typography component={"h2"} variant="h3">
-        {`${content}`}
-      </Typography>
-    </Divider>
+    <Box sx={{ pt: 2 }}>
+      <Divider component="div" role="presentation" sx={dividerSX}>
+        <Typography component={"h2"} variant="h3">
+          {`${content}`}
+        </Typography>
+      </Divider>
+    </Box>
   );
 }
 
