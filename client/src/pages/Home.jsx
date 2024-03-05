@@ -36,15 +36,17 @@ export default function Home() {
   const handleScroll = () => setScrollTop(window.scrollY);
 
   useEffect(() => {
-    const windowHeight = window.innerHeight;
-    const pageHeight = document.documentElement.scrollHeight;
-    const actualHeight = pageHeight - windowHeight;
+    //const windowHeight = window.innerHeight;
+    //const pageHeight = document.documentElement.scrollHeight;
+    //const actualHeight = pageHeight - windowHeight;
     //percent of the page the user has currently scrolled based on above pixels
+    //currently calulated off of 5000, this eventually needs to match page height,
+    //and all breakpoint values will need to be edited again
     const scrollProgress = 100 * (scrollTop / 5000);
-    console.log("scrolled from the top:", scrollTop);
-    console.log("window height:", windowHeight, "page height:", pageHeight);
-    console.log("actual page height:", actualHeight);
-    console.log("percent scrolled:", scrollProgress);
+    // console.log("scrolled from the top:", scrollTop);
+    // console.log("window height:", windowHeight, "page height:", pageHeight);
+    // console.log("actual page height:", actualHeight);
+    // console.log("percent scrolled:", scrollProgress);
     //listener to store the amount scrolled
     window.addEventListener("scroll", handleScroll);
     //TODO: add variable for window width above, to help us detect if user is
