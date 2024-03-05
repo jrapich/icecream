@@ -35,7 +35,6 @@ export default function MiddleContent({ showContent }) {
         </Container>
       </Fade>
       <Grow
-        direction="left"
         in={showMidContent}
         
         {...(showMidContent ? { timeout: 1000 } : { timeout: 500 })}
